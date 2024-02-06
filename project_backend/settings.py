@@ -21,6 +21,9 @@ import os
 
 load_dotenv()
 
+# Environment variable to determine if the app is in development or production. If the environment variable is not set, it will default to development.
+DJANGO_ENV = os.getenv("DJANGO_ENV", "development")
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -83,7 +86,13 @@ DATABASES = {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
     }
+    # This is for MySQL. If DJANGO_ENV is set to production in your .env, the DATABASES variable will be overwritten with the MySQL settings.
 }
+
+if DJANGO_ENV == "production":
+    DATABASES = {
+        # Put the MqSQL database settings here.
+    }
 
 
 # Password validation
