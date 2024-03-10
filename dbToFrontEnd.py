@@ -4,6 +4,7 @@ import json
 from dotenv import load_dotenv
 import os
 # 
+load_dotenv()
 def lambda_handler(event, context):
     # Database connection details
     db_connection = pymysql.connect(
