@@ -19,4 +19,4 @@ jobs:
       - name: Run tests
         run: |
           python -m unittest maha_db_to_frontend_test.py
-          python -m unittest maha_nhtsa_to_s3_test.py
+          python -m unittest maha_s3_to_mysql_test.py
