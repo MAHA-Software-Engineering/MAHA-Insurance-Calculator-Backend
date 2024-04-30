@@ -19,10 +19,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Run tests
+          pip install coverage
+      - name: Run tests with coverage
         run: |
-          python -m unittest maha_nhtsa_to_s3_test.py
-          python -m unittest maha_s3_to_mysql_test.py
-          python -m unittest maha_db_to_frontend_test.py
-          python -m unittest FetchUserReviews_test.py
-          python -m unittest userReviewsPublish_test.py
+          coverage run --source=lambdas -m unittest maha_nhtsa_to_s3_test.py
+          coverage run --source=lambdas -a -m unittest maha_s3_to_mysql_test.py
+          coverage run --source=lambdas -a -m unittest maha_db_to_frontend_test.py
+          coverage run --source=lambdas -a -m unittest FetchUserReviews_test.py
+          coverage run --source=lambdas -a -m unittest userReviewsPublish_test.py
+          coverage report
