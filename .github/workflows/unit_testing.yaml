@@ -25,4 +25,4 @@ jobs:
           python -m unittest maha_s3_to_mysql_test.py
           python -m unittest maha_db_to_frontend_test.py
           python -m unittest FetchUserReviews_test.py
-          python -m unittest userReviewsPublishTest.py
+          python -m unittest userReviewsPublish_test.py
