@@ -1,3 +1,5 @@
+# THIS REPOSITORY HAS BEEN ARCHIVED AFTER SUCCESSFUL COMPLETION OF THS PROJECT
+
 # Local Instance Instructions
 
 1) Open Visual Studio Code
